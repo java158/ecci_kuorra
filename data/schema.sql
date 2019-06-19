@@ -30,6 +30,12 @@ CREATE TABLE logs(
     FOREIGN KEY (username) REFERENCES users(username)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE productos( 
+    id_producto integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    producto varchar(20) NOT NULL,
+    precio float NOT NULL,
+    exiatencias integer NOT NULL,
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO users (username, password, privilege, status, name, email, other_data, user_hash, change_pwd)
 VALUES ('admin',MD5(concat('admin', 'kuorra_key')), 0, 1, 'Admin', 'admin@gmail.com','TIC:SI', MD5(concat('admin', 'kuorra_key', '2016/06/04')), 0),
